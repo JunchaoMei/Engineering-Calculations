@@ -1,0 +1,26 @@
+[plot]
+clear;
+[fai,omega,x,y,k,u] = Lid_Driven_Cavity(0.001,0.002);
+
+surf(y,x,fai);
+colorbar;
+title('Stream Function ¦Õ(x,y)');
+xlabel('y'); ylabel('x'); zlabel('¦Õ');
+
+contour(y,x,fai);
+colorbar;
+title('Vorticity [Contour]');
+xlabel('y'); ylabel('x');
+
+surf(y,x,u);
+colorbar;
+title('x-component velocity u(x,y)');
+xlabel('y'); ylabel('x'); zlabel('u');
+
+k
+
+
+[data]
+fai
+omega
+u

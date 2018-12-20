@@ -1,0 +1,36 @@
+$TITLE HW6_Problem5
+$OFFSYMXREF
+$OFFSYMLIST
+
+ VARIABLES  Y1,Y2, X1,X2, f;
+ POSITIVE VARIABLES X1,X2,Y1,Y2;
+
+ EQUATIONS  CON1,CON2,CON3,CON4,CON5,CON6, OBJ;
+
+ CON1..     X1+4*X2 =L= 8;
+ CON2..     4*X1+X2 =L= 12;
+ CON3..     3*X1+4*X2 =L= 12;
+ CON4..     2*Y1+Y2 =L= 8;
+ CON5..     Y1+2*Y2 =L= 8;
+ CON6..     Y1+Y2 =L= 5;
+
+ OBJ..      f =E= X1-X2-Y1-X1*Y1+X1*Y2+X2*Y1-X2*Y2;
+
+* Upper Bounds
+X1.UP = 10;
+X2.UP = 10;
+Y1.UP = 10;
+Y2.UP = 10;
+
+* Initial point
+*Y1.L = 1;
+
+ MODEL HW6_Problem5  / ALL / ;
+
+ OPTION LIMROW = 0;
+ OPTION LIMCOL = 0;
+ OPTION NLP = BARON;
+* OPTION SOLPRINT = OFF;
+
+ SOLVE HW6_Problem5 USING NLP MINIMIZING f;
+* DISPLAY X.L, Y.L, Z.L;

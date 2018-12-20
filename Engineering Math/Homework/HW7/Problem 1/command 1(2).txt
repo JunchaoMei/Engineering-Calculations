@@ -1,0 +1,29 @@
+%Problem 1(2)
+clear
+
+syms fai x;
+x1 = 0.5;
+ya = eval((((fai^2)*(x1^2-x^2)-2)/((fai^2)*(x1^2-1)-2)))
+na = eval(int(ya,0,1))
+
+i=1;
+for fai = 1:0.1:10
+	Fai(i) = fai;
+	Ya(i) = eval((((fai^2)*(x1^2-x^2)-2)/((fai^2)*(x1^2-1)-2)));
+	Na(i) = eval(int(Ya(i),0,1));
+	n = tanh(fai)/fai;
+	Error(i) = abs((n-Na(i))/n);
+	i=i+1;
+end
+
+figure
+plot (Fai,Error);
+title('error ~ ¦Õ');
+xlabel('¦Õ'); ylabel('error');
+
+fai = 10;
+ya = eval(ya)
+na = eval(int(ya,0,1))
+
+n = tanh(fai)/fai
+error = abs((n-na)/n)

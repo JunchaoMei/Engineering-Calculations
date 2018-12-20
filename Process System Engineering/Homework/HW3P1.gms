@@ -1,0 +1,25 @@
+$TITLE HW3 Problem1
+$OFFSYMXREF
+$OFFSYMLIST
+
+ VARIABLES  X1, X2, f;
+
+ EQUATIONS  CON1, CON2, CON3, CON4, OBJ;
+
+ CON1..     2*X1+X2-6 =L= 0;
+ CON2..     X1-X2-4 =L= 0;
+ CON3..     X1 =G= 1.8;
+ CON4..     X2 =G= 0;
+ OBJ..      f =E= SQR(X1-3)+SQR(X2-4);
+
+* Initial point
+ X1.L = 1.8;
+ X2.L = 0;
+
+ MODEL Problem1  / ALL / ;
+
+ OPTION LIMROW = 0;
+ OPTION LIMCOL = 0;
+ OPTION NLP = COINIPOPT;
+
+ SOLVE Problem1 USING NLP MINIMIZING f;

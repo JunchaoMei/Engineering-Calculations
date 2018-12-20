@@ -1,0 +1,56 @@
+[T,x,y,k] = Point_SOR(0.0001,1.5);
+
+surf(x,y,T);
+colorbar;
+title('Point SOR (¦Ø=1.5)');
+xlabel('x'); ylabel('y'); zlabel('¦·');
+
+plot(y,T(:,1),y,T(:,6),y,T(:,11),y,T(:,16),y,T(:,21),y,T(:,26));
+title('Point SOR (¦Ø=1.5) [¦·(y)]');
+xlabel('y'); ylabel('¦·');
+legend('x=0.0','x=1.0','x=2.0','x=3.0','x=4.0','x=5.0');
+
+contour(x,y,T);
+colorbar;
+title('Point SOR (¦Ø=1.5) [Contour]');
+xlabel('x'); ylabel('y');
+
+	Tt=T'
+clear;
+for i=1:19
+    w(i)=i*0.1;
+    [T,x,y,k(i)] = Point_SOR(0.0001,w(i));
+end
+plot(w,k);
+title('[Point SOR] # iterations (k) ~ relaxation parameter (¦Ø)');
+xlabel('¦Ø'); ylabel('k');
+
+
+clear;
+[T,x,y,k] = Line_SOR(0.0001,0.5);
+
+surf(x,y,T);
+colorbar;
+title('Line SOR (¦Ø=0.5)');
+xlabel('x'); ylabel('y'); zlabel('¦·');
+
+plot(y,T(:,1),y,T(:,6),y,T(:,11),y,T(:,16),y,T(:,21),y,T(:,26));
+title('Line SOR (¦Ø=0.5) [¦·(y)]');
+xlabel('y'); ylabel('¦·');
+legend('x=0.0','x=1.0','x=2.0','x=3.0','x=4.0','x=5.0');
+
+contour(x,y,T);
+colorbar;
+title('Line SOR (¦Ø=0.5) [Contour]');
+xlabel('x'); ylabel('y');
+
+	Tt=T'
+
+clear;
+for i=1:19
+    w(i)=i*0.1;
+    [T,x,y,k(i)] = Line_SOR(0.0001,w(i));
+end
+plot(w,k);
+title('[Line SOR] # iterations (k) ~ relaxation parameter (¦Ø)');
+xlabel('¦Ø'); ylabel('k');

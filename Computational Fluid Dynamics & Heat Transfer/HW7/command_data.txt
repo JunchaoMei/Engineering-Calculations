@@ -1,0 +1,35 @@
+clear;
+dx=1.0;dt=0.1;
+[u,x,t] = Lax(dx,dt);
+
+u
+
+clear;
+dx=1.0;dt=0.2;
+[u,x,t] = Lax(dx,dt);
+
+u
+
+clear;
+dx=1.0;dt=0.1;
+[u,x,t] = Lax_Wendroff(dx,dt);
+
+u
+
+clear;
+dx=1.0;dt=0.2;
+[u,x,t] = Lax_Wendroff(dx,dt);
+
+u
+
+clear;
+dx=1.0;dt=0.1;
+[u,x,t] = MacCormack(dx,dt);
+
+u
+
+clear;
+dx=1.0;dt=0.2;
+[u,x,t] = MacCormack(dx,dt);
+
+u

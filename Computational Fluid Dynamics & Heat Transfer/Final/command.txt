@@ -1,0 +1,29 @@
+[plot]
+clear;
+[r,theta,T] = Point_GS(10e-5,0.75);
+
+>> contourf(r,theta,T);
+colorbar;
+title('Point Gauss-Seidel T(r,¦È)');
+xlabel('r'); ylabel('rad(¦È)'); zlabel('T');
+
+>> contourf(x,y,T);
+colorbar;
+title('Point Gauss-Seidel T(x,y)');
+xlabel('x'); ylabel('y'); zlabel('T');
+
+clear;
+[r,theta,T] = Line_GS(10e-5,0.75);
+
+>> contourf(r,theta,T);
+colorbar;
+title('Line Gauss-Seidel T(r,¦È)');
+xlabel('r'); ylabel('rad(¦È)'); zlabel('T');
+
+>> contourf(x,y,T);
+colorbar;
+title('Line Gauss-Seidel T(x,y)');
+xlabel('x'); ylabel('y'); zlabel('T');
+
+[data]
+T

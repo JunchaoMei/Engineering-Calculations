@@ -1,0 +1,13 @@
+#!/bin/bash
+#PBS -N ABCLuster-Cl
+#PBS -j oe
+#PBS -q dist_big
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=00:10:00
+
+cd $PBS_O_WORKDIR
+module purge
+module load mopac
+module load python
+
+python runjob.py

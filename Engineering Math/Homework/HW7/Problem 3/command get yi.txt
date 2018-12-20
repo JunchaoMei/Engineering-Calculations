@@ -1,0 +1,20 @@
+%get yi
+clear
+load X.mat
+
+number_points = [1 2 3 5 7 10 15];
+fai=10;
+for i=1:4
+	N = number_points(i);
+	for j=1:N+1
+		Y1(N,j) = cosh(fai*X(N,j))/cosh(fai);
+	end
+end
+
+fai=100;
+for i=4:7
+	N = number_points(i);
+	for j=1:N+1
+		Y2(N,j) = cosh(fai*X(N,j))/cosh(fai);
+	end
+end

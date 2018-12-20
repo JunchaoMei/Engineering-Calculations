@@ -1,0 +1,24 @@
+$TITLE HW5_Problem_1e
+$OFFSYMXREF
+$OFFSYMLIST
+
+ VARIABLES  Y1, Y2, Z;
+
+ EQUATIONS  CON1, CON2, CON3, CON4, OBJ;
+
+ CON1..     Y1+Y2 =L= 1;
+ CON2..     1.2*Y1+0.5*Y2 =L= 1;
+ CON3..     Y1 =E= 0;
+ CON4..     Y2 =L= 1;
+ OBJ..      Z =E= 1.2*Y1+Y2;
+
+* Initial point
+* Y2.L = 0.5;
+
+ MODEL HW5_Problem_1e  / ALL / ;
+
+ OPTION LIMROW = 0;
+ OPTION LIMCOL = 0;
+ OPTION LP = CONOPT;
+
+ SOLVE HW5_Problem_1e USING LP MAXIMIZING Z;

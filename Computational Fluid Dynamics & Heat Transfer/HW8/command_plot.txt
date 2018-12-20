@@ -1,0 +1,27 @@
+clear;
+[Th,Tc,X] = numerical_HW8(0.2);
+plot(X,Th,X,Tc);
+title('Numerical Solution (¦¤X=0.2)');
+xlabel('X'); ylabel('¦È');
+legend('¦È_h','¦È_c');
+
+clear;
+[Th,Tc,X] = numerical_HW8(0.1);
+plot(X,Th,X,Tc);
+title('Numerical Solution (¦¤X=0.1)');
+xlabel('X'); ylabel('¦È');
+legend('¦È_h','¦È_c');
+
+clear;
+[Th,Tc,X] = numerical_HW8(0.05);
+plot(X,Th,X,Tc);
+title('Numerical Solution (¦¤X=0.05)');
+xlabel('X'); ylabel('¦È');
+legend('¦È_h','¦È_c');
+
+clear;
+[Th,Tc,X] = exact_HW8(0.01);
+plot(X,Th,X,Tc);
+title('Exact Solution (¦¤X=0.01)');
+xlabel('X'); ylabel('¦È');
+legend('¦È_h','¦È_c');

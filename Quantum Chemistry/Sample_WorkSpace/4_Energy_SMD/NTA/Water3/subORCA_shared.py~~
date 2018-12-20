@@ -1,0 +1,43 @@
+#!/bin/env python
+
+import sys
+import os
+
+file  = sys.argv[2:]
+
+nodes = '2'#raw_input('Nodes requested: ')
+ppn   =	'12' #raw_input('PPN: ')
+Walltime = sys.argv[1] #raw_input('Walltime (hr:min:sec): ')
+
+for item in file:
+	if item[-3:]=='inp':
+		filename=item.split('.')
+		if filename[0]+'.sub' in file:
+			print 'Submissionfile already exists for '+filename[0]
+		else:
+			subfile=open(item[:-3]+'sub','w')
+			
+			subfile.write('#!/bin/bash\n')
+			subfile.write('#PBS -N '+item[:-4]+'\n')
+			subfile.write('#PBS -j oe\n')
+			subfile.write('#PBS -l nodes={0}:ppn={1},walltime={2}\n'.format(nodes, ppn, Walltime))
+			subfile.write('#PBS -q distributed\n')
+		
+			subfile.write('cd $PBS_O_WORKDIR\n')
+			subfile.write('module purge\n')
+			subfile.write('module load orca/3.0.2\n')
+			subfile.write('cp $PBS_O_WORKDIR/{0}.inp $SCRATCH\n'.format(filename[0]))
+			subfile.write('cd $SCRATCH\n')
+			subfile.write('ru_at_exit(){\n')
+			subfile.write('set -v\n')
+			subfile.write('cp $SCRATCH/{0}.out $PBS_O_WORKDIR\n'.format(filename[0]))
+			subfile.write('cp $SCRATCH/{0}.gbw $PBS_O_WORKDIR\n'.format(filename[0]))
+			subfile.write('cp $SCRATCH/{0}.xyz $PBS_O_WORKDIR\n'.format(filename[0]))
+			subfile.write('}\n')
+			subfile.write('/opt/frank/orca/orca_3_0_2_linux_x86-64/orca {0}.inp > $PBS_O_WORKDIR/{1}.out\n\n'.format(filename[0],filename[0]))
+			subfile.close()
+				
+			print('item has been submitted as: ')	
+			os.system('qsub '+item[:-3]+'sub')
+
+

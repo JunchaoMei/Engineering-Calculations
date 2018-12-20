@@ -1,0 +1,62 @@
+clear;
+r=[0.2,0.4,0.6,0.8,0.9,1.0];
+
+[X,Y1] = Figure_511(r(1));
+[X,Y2] = Figure_511(r(2));
+[X,Y3] = Figure_511(r(3));
+[X,Y4] = Figure_511(r(4));
+[X,Y5] = Figure_511(r(5));
+[X,Y6] = Figure_511(r(6));
+
+semilogx(X,Y1,X,Y2,X,Y3,X,Y4,X,Y5,X,Y6);
+title('Numerical Solution');
+xlabel('¦Ç'); ylabel('velocity');
+grid on;
+xlim([0.1,100]);
+legend('r=0.2','r=0.4','r=0.6','r=0.8','r=0.9','r=1.0');
+
+
+clear;
+h=[0.001,0.002,0.005,0.01,0.02,0.05,0.1,0.2,0.5,1,2,5,10,20,50];
+
+[X,Y1] = Figure_512(h(1));
+[X,Y2] = Figure_512(h(2));
+[X,Y3] = Figure_512(h(3));
+[X,Y4] = Figure_512(h(4));
+[X,Y5] = Figure_512(h(5));
+[X,Y6] = Figure_512(h(6));
+[X,Y7] = Figure_512(h(7));
+[X,Y8] = Figure_512(h(8));
+[X,Y9] = Figure_512(h(9));
+[X,Y10] = Figure_512(h(10));
+[X,Y11] = Figure_512(h(11));
+[X,Y12] = Figure_512(h(12));
+[X,Y13] = Figure_512(h(13));
+[X,Y14] = Figure_512(h(14));
+[X,Y15] = Figure_512(h(15));
+
+semilogx(X,Y1,X,Y2,X,Y3,X,Y4,X,Y5,X,Y6,X,Y7,X,Y8,X,Y9,X,Y10,X,Y11,X,Y12,X,Y13,X,Y14,X,Y15);
+title('Figure 5.12');
+xlabel('Bi^2F_0'); ylabel('Q/Q_0');
+grid on;
+xlim([1e-5,1e4]);
+legend('Bi=0.001','Bi=0.002','Bi=0.005','Bi=0.01','Bi=0.02','Bi=0.05','Bi=0.1','Bi=0.2','Bi=0.5','Bi=1','Bi=2','Bi=5','Bi=10','Bi=20','Bi=50');
+
+
+X=X';
+Y1=Y1';
+Y2=Y2';
+Y3=Y3';
+Y4=Y4';
+Y5=Y5';
+Y6=Y6';
+
+Y7=Y7';
+Y8=Y8';
+Y9=Y9';
+Y10=Y10';
+Y11=Y11';
+Y12=Y12';
+Y13=Y13';
+Y14=Y14';
+Y15=Y15';

@@ -1,0 +1,7 @@
+solute               # Result file name
+input.cluster     # Cluster file name
+cube 2.5 3 3 3        # Structure types
+4000                 # Maximal number of calculations
+>>>>
+./oa $xxx$ $inp$ $out$
+>>>>

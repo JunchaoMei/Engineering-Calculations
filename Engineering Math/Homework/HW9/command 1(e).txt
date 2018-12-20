@@ -1,0 +1,15 @@
+% Problem 1(e)
+
+% run 1(d) with dt=0.01 & tb=1500;
+I = 50/dx+1;
+error=1e-4;
+
+% get critical j
+for j=1:Nt
+	if abs(U(I,j+1)-U(I,j))<error
+		J=j;
+		break;
+	end
+end
+
+t_critical = (J-1)*dt

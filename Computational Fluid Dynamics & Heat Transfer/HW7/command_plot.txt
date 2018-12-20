@@ -1,0 +1,107 @@
+clear;
+dx=1.0;dt=0.1;
+[u,x,t] = Lax(dx,dt);
+
+surf(t,x,u);
+colorbar;
+title('Lax (¦¤x=1.0, ¦¤t=0.1)');
+xlabel('t'); ylabel('x'); zlabel('u');
+
+T=0:0.4:2.4;
+for i=1:length(T)
+    arr(i)=round(T(i)/dt+1);
+end
+plot(x,u(:,arr(1)),x,u(:,arr(2)),x,u(:,arr(3)),x,u(:,arr(4)),x,u(:,arr(5)),x,u(:,arr(6)),x,u(:,arr(7)));
+title('Lax (¦¤x=1.0, ¦¤t=0.1) [u(x)]');
+xlabel('x'); ylabel('u');
+legend('t=0.0','t=0.4','t=0.8','t=1.2','t=1.6','t=2.0','t=2.4');
+
+clear;
+dx=1.0;dt=0.2;
+[u,x,t] = Lax(dx,dt);
+
+surf(t,x,u);
+colorbar;
+title('Lax (¦¤x=1.0, ¦¤t=0.2)');
+xlabel('t'); ylabel('x'); zlabel('u');
+
+T=0:0.4:2.4;
+for i=1:length(T)
+    arr(i)=round(T(i)/dt+1);
+end
+plot(x,u(:,arr(1)),x,u(:,arr(2)),x,u(:,arr(3)),x,u(:,arr(4)),x,u(:,arr(5)),x,u(:,arr(6)),x,u(:,arr(7)));
+title('Lax (¦¤x=1.0, ¦¤t=0.2) [u(x)]');
+xlabel('x'); ylabel('u');
+legend('t=0.0','t=0.4','t=0.8','t=1.2','t=1.6','t=2.0','t=2.4');
+
+clear;
+dx=1.0;dt=0.1;
+[u,x,t] = Lax_Wendroff(dx,dt);
+
+surf(t,x,u);
+colorbar;
+title('Lax-Wendroff (¦¤x=1.0, ¦¤t=0.1)');
+xlabel('t'); ylabel('x'); zlabel('u');
+
+T=0:0.4:2.4;
+for i=1:length(T)
+    arr(i)=round(T(i)/dt+1);
+end
+plot(x,u(:,arr(1)),x,u(:,arr(2)),x,u(:,arr(3)),x,u(:,arr(4)),x,u(:,arr(5)),x,u(:,arr(6)),x,u(:,arr(7)));
+title('Lax-Wendroff (¦¤x=1.0, ¦¤t=0.1) [u(x)]');
+xlabel('x'); ylabel('u');
+legend('t=0.0','t=0.4','t=0.8','t=1.2','t=1.6','t=2.0','t=2.4');
+
+clear;
+dx=1.0;dt=0.2;
+[u,x,t] = Lax_Wendroff(dx,dt);
+
+surf(t,x,u);
+colorbar;
+title('Lax-Wendroff (¦¤x=1.0, ¦¤t=0.2)');
+xlabel('t'); ylabel('x'); zlabel('u');
+
+T=0:0.4:2.4;
+for i=1:length(T)
+    arr(i)=round(T(i)/dt+1);
+end
+plot(x,u(:,arr(1)),x,u(:,arr(2)),x,u(:,arr(3)),x,u(:,arr(4)),x,u(:,arr(5)),x,u(:,arr(6)),x,u(:,arr(7)));
+title('Lax-Wendroff (¦¤x=1.0, ¦¤t=0.2) [u(x)]');
+xlabel('x'); ylabel('u');
+legend('t=0.0','t=0.4','t=0.8','t=1.2','t=1.6','t=2.0','t=2.4');
+
+clear;
+dx=1.0;dt=0.1;
+[u,x,t] = MacCormack(dx,dt);
+
+surf(t,x,u);
+colorbar;
+title('MacCormack (¦¤x=1.0, ¦¤t=0.1)');
+xlabel('t'); ylabel('x'); zlabel('u');
+
+T=0:0.4:2.4;
+for i=1:length(T)
+    arr(i)=round(T(i)/dt+1);
+end
+plot(x,u(:,arr(1)),x,u(:,arr(2)),x,u(:,arr(3)),x,u(:,arr(4)),x,u(:,arr(5)),x,u(:,arr(6)),x,u(:,arr(7)));
+title('MacCormack (¦¤x=1.0, ¦¤t=0.1) [u(x)]');
+xlabel('x'); ylabel('u');
+legend('t=0.0','t=0.4','t=0.8','t=1.2','t=1.6','t=2.0','t=2.4');
+
+clear;
+dx=1.0;dt=0.2;
+[u,x,t] = MacCormack(dx,dt);
+
+surf(t,x,u);
+colorbar;
+title('MacCormack (¦¤x=1.0, ¦¤t=0.2)');
+xlabel('t'); ylabel('x'); zlabel('u');
+
+T=0:0.4:2.4;
+for i=1:length(T)
+    arr(i)=round(T(i)/dt+1);
+end
+plot(x,u(:,arr(1)),x,u(:,arr(2)),x,u(:,arr(3)),x,u(:,arr(4)),x,u(:,arr(5)),x,u(:,arr(6)),x,u(:,arr(7)));
+title('MacCormack (¦¤x=1.0, ¦¤t=0.2) [u(x)]');
+xlabel('x'); ylabel('u');
+legend('t=0.0','t=0.4','t=0.8','t=1.2','t=1.6','t=2.0','t=2.4');

@@ -1,0 +1,40 @@
+clear
+
+ExplicitEuler_h;
+
+clear
+
+ExplicitEuler;
+
+yA_Explict = yA; yG_Explict = yG; yC_Explict = yC; 
+
+BackwardEuler;
+
+yA_Backward = yA; yG_Backward = yG; yC_Backward = yC; 
+
+Trapezoidal;
+
+yA_Trape = yA; yG_Trape = yG; yC_Trape = yC; 
+
+[t_ana,yA_ana,yG_ana,yC_ana] = analytical(a,b);
+
+figure
+plot(t_ana,yA_ana,t(1,:),yA_Explict(1,:),t(1,:),yA_Backward(1,:),t(1,:),yA_Trape(1,:));
+title('yA - comparison');
+xlabel('t'); ylabel('yA');
+axis([a b 0 1]);
+legend('Analytical','Explict Euler','Backward Euler','Trapezoidal');
+
+figure
+plot(t_ana,yG_ana,t(1,:),yG_Explict(1,:),t(1,:),yG_Backward(1,:),t(1,:),yG_Trape(1,:));
+title('yG - comparison');
+xlabel('t'); ylabel('yG');
+axis([a b 0 1]);
+legend('Analytical','Explict Euler','Backward Euler','Trapezoidal');
+
+figure
+plot(t_ana,yC_ana,t(1,:),yC_Explict(1,:),t(1,:),yC_Backward(1,:),t(1,:),yC_Trape(1,:));
+title('yC - comparison');
+xlabel('t'); ylabel('yC');
+axis([a b 0 1]);
+legend('Analytical','Explict Euler','Backward Euler','Trapezoidal');

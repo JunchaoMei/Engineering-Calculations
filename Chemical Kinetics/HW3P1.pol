@@ -1,0 +1,37 @@
+No Title  |POLVER05_0 |1
+d(Ca)/d(t) = -k1*Ca #concentration of A
+d(Cb)/d(t) = 2*k1*Ca-k2*Cb*Cc #concentration of B
+d(Cc)/d(t) = -k2*Cb*Cc #concentration of C
+d(Cd)/d(t) = k2*Cb*Cc #concentration of D
+d(Ce)/d(t) = k2*Cb*Cc #concentration of E
+
+k1 = 1.6*exp(-Ea1/(R*T))
+k2 = 0.77*exp(-Ea2/(R*T))
+
+d(T)/d(t) = ((-deltaH1*k1*Ca-deltaH2*k2*Cb*Cc)*V-UA*(T-Text))/(V*(Cpa*Ca+Cpb*Cb+Cpc*Cc+Cpd*Cd+Cpe*Ce)+Cps*ns)
+
+R = 8.314
+Ea1 = 24000
+Ea2 = 22000
+Text = 373.15
+deltaH1 = -66000
+deltaH2 = -88000
+UA = 80
+V = 30
+ns = 400
+
+Ca(0) = 0.6
+Cb(0) = 0
+Cc(0) = 1.25
+Cd(0) = 0
+Ce(0) = 0
+T(0) = 383.15
+t(0) = 0
+t(f) = 5400
+
+Cpa = 82
+Cpb = 41
+Cpc = 41
+Cpd = 41
+Cpe = 41
+Cps = 60

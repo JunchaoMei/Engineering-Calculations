@@ -1,0 +1,38 @@
+[T,x,y,k] = Point_GS(0.0001);
+
+surf(x,y,T);
+colorbar;
+title('Point Gauss-Seidel');
+xlabel('x'); ylabel('y'); zlabel('¦·');
+
+plot(y,T(:,1),y,T(:,6),y,T(:,11),y,T(:,16),y,T(:,21),y,T(:,26));
+title('Point Gauss-Seidel [¦·(y)]');
+xlabel('y'); ylabel('¦·');
+legend('x=0.0','x=1.0','x=2.0','x=3.0','x=4.0','x=5.0');
+
+contour(x,y,T);
+colorbar;
+title('Point Gauss-Seidel [Contour]');
+xlabel('x'); ylabel('y');
+
+Tt=T' k=292
+
+clear;
+[T,x,y,k] = Line_GS(0.0001);
+
+surf(x,y,T);
+colorbar;
+title('Line Gauss-Seidel (Y-Sweep)');
+xlabel('x'); ylabel('y'); zlabel('¦·');
+
+plot(y,T(:,1),y,T(:,6),y,T(:,11),y,T(:,16),y,T(:,21),y,T(:,26));
+title('Line Gauss-Seidel (Y-Sweep) [¦·(y)]');
+xlabel('y'); ylabel('¦·');
+legend('x=0.0','x=1.0','x=2.0','x=3.0','x=4.0','x=5.0');
+
+contour(x,y,T);
+colorbar;
+title('Line Gauss-Seidel (Y-Sweep) [Contour]');
+xlabel('x'); ylabel('y');
+
+Tt=T' k=322

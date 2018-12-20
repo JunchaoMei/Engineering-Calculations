@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Create input file
+fn=$1-pm7
+xyzfn=$2
+outfn=$3
+
+awk 'NR>2{print}' ${xyzfn} >> temp.xyz
+
+
+# Run the calculation
+python ./xyz_mopac_opt.py  temp.xyz ${fn}.mop
+mopac ${fn}.mop
+python ./mopac_xyz.py ${fn}.out
+
+rm -f temp.xyz
+
+# Transform the output file
+energy=`grep "TOTAL ENERGY" ${fn}.out | tail -n 1 | awk '{print $4}'`
+sed "2s/^.*$/${energy}/" ${fn}.xyz > ${outfn}
+rm -rf ${fn}.mop ${fn}.out ${fn}.arc ${fn}.prop ${fn}.trj ${fn}.xyz
+

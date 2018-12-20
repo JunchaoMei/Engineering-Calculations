@@ -1,0 +1,11 @@
+clear;
+[Th1,X1] = numerical_HW8(0.2);
+Th1
+
+clear;
+[Th2,X2] = numerical_HW8(0.1);
+Th2
+
+clear;
+[Th3,X3] = numerical_HW8(0.05);
+Th3

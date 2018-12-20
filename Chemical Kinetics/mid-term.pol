@@ -1,0 +1,46 @@
+No Title  |POLVER05_0 |1
+d(Fa) / d(v) = -k1f*Fa+k1b*Fb
+d(Fb) / d(v) = k1f*Fa-k1b*Fb-k2*Fb*Fc
+d(Fc) / d(v) = -k2*Fb*Fc
+d(Fd) / d(v) = k2*Fb*Fc-k3*Fd
+d(Fp) / d(v) = k3*Fd
+
+rb1 = k1f*Fa-k1b*Fb
+rd2 = k2*Fb*Fc
+rp3 = k3*Fd
+d(T)/d(v) = (Uav*(THX-T)+(rb1)*deltaH1+(rd2)*deltaH2+(rp3)*deltaH3)/(Fa*Cpa+Fb*Cpb+Fc*Cpc+Fd*Cpd+Fp*Cpp)
+
+k1f = k01f*exp(-Ea1/(R*T))
+k1b = k01b*exp(-Ea_1/(R*T))
+k2 = k02*exp(-Ea2/(R*T))
+k3 = k03*exp(-Ea3/(R*T))
+
+k01f = 3.1*10000
+k01b = 1.2*10000
+k02 = 3.9*1000
+k03 = 4.1*100
+Ea1 = 12000
+Ea_1 = 14000
+Ea2 = 21000
+Ea3 = 19000
+deltaH1 = -2000
+deltaH2 = -33000
+deltaH3 = -28000
+Cpa = 23
+Cpb = 46
+Cpc = 21
+Cpd = 66
+Cpp = 66
+Uav = 200
+THX = 230+273.15
+R = 8.314
+
+Fa(0) = 6
+Fc(0) = 6
+Fb(0) = 0
+Fd(0) = 0
+Fp(0) = 0
+T(0) = 473.15
+v(0) = 0
+v(f) = .5
+

@@ -1,0 +1,18 @@
+%get collocation points
+clear
+
+lower_integration_limit = 0;
+upper_integration_limit = 1;
+number_points = [1 2 3 5 7 10 15];
+X=zeros(15,16);
+
+for i=1:7
+	N = number_points(i);
+	[abs,wgts] = Jacobi(N, lower_integration_limit, upper_integration_limit);
+	for j=1:N
+		X(N,j) = abs(j);
+		W(N,j) = wgts(j);
+	end
+	X(N,N+1) = 1;
+end
+>>

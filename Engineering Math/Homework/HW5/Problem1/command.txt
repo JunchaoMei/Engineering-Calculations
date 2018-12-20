@@ -1,0 +1,44 @@
+clear
+
+ExplicitEuler_h;
+
+clear
+
+ExplicitEuler;
+
+yA_Explict = yA; yG_Explict = yG; yC_Explict = yC; 
+
+BackwardEuler;
+
+yA_Backward = Y(1,:); yG_Backward = Y(2,:); yC_Backward = Y(3,:); 
+
+Trapezoidal;
+
+yA_Trape = Y(1,:); yG_Trape = Y(2,:); yC_Trape = Y(3,:); 
+
+RungeKutta4;
+
+yA_RK = Y(1,:); yG_RK = Y(2,:); yC_RK = Y(3,:); 
+
+[t_ana,yA_ana,yG_ana,yC_ana] = Analytical();
+
+figure
+plot(t_ana,yA_ana,t,yA_Explict(1,:),t,yA_Backward(1,:),t,yA_Trape(1,:),t,yA_RK);
+title('yA - comparison');
+xlabel('t'); ylabel('yA');
+axis([a b 0 1]);
+legend('Analytical','Explict Euler','Backward Euler','Trapezoidal','Runge-Kunta 4th');
+
+figure
+plot(t_ana,yG_ana,t,yG_Explict(1,:),t,yG_Backward(1,:),t,yG_Trape(1,:),t,yG_RK);
+title('yG - comparison');
+xlabel('t'); ylabel('yG');
+axis([a b 0 1]);
+legend('Analytical','Explict Euler','Backward Euler','Trapezoidal','Runge-Kunta 4th');
+
+figure
+plot(t_ana,yC_ana,t,yC_Explict(1,:),t,yC_Backward(1,:),t,yC_Trape(1,:),t,yC_RK);
+title('yC - comparison');
+xlabel('t'); ylabel('yC');
+axis([a b 0 1]);
+legend('Analytical','Explict Euler','Backward Euler','Trapezoidal','Runge-Kunta 4th');

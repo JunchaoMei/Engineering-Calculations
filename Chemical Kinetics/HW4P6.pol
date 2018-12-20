@@ -1,0 +1,44 @@
+No Title  |POLVER05_0 |1
+d(Fa)/d(V) = (-k1*Ca) #concentration of A
+d(Fb)/d(V) = (2*k1*Ca-k2*Cb*Cc) #concentration of B
+d(Fc)/d(V) = (-k2*Cb*Cc) #concentration of C
+d(Fd)/d(V) = (k2*Cb*Cc-k3*Cd*Cd) #concentration of D
+d(Fe)/d(V) = (0.5*k3*Cd*Cd) #concentration of E
+Ca = Fa/v
+Cb = Fb/v
+Cc = Fc/v
+Cd = Fd/v
+Ce = Fe/v
+
+k1 = 220000*exp(-E1/(R*T))
+k2 = 7600000*exp(-E2/(R*T))
+k3 = 94000*exp(-E3/(R*T))
+
+d(T)/d(V) = (Uav*(Text-T)+(-k1*Ca)*deltaH1+(-k2*Cb*Cc)*deltaH2+(-0.5*k3*Cd*Cd)*deltaH3)/(Fa*Cpa+Fb*Cpb+Fc*Cpc+Fd*Cpd+Fe*Cpe)
+
+R = 8.314
+E1 = 34000
+E2 = 8000
+E3 = 22000
+Text = 373.15
+deltaH1 = -15000
+deltaH2 = -33000
+deltaH3 = -19000
+Uav = 900
+v = 200 #volumetric flow rate
+
+Fa(0) = 4
+Fb(0) = 0
+Fc(0) = 8
+Fd(0) = 0
+Fe(0) = 0
+T(0) = 473.15
+V(0) = 0
+V(f) = 5
+
+Cpa = 120
+Cpb = 65
+Cpc = 24
+Cpd = 84
+Cpe = 155
+

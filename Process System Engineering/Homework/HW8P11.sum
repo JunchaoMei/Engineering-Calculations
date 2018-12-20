@@ -1,0 +1,159 @@
+
+
+
+                      **   S Y N H E A T   **
+
+                         SUMMARY OF RESULTS
+
+
+
+   DATA.
+   _____
+
+
+     *HOT STREAMS  :
+
+             STREAM        Tin       Tout       FCP        CFI
+                           (K)       (K)       (kW/K)  (kW/m2 K)
+             _____________________________________________________
+                     1    650.00    370.00     10.00      1.00
+                     2    590.00    370.00     20.00      1.00
+
+
+     *COLD STREAMS :
+
+             STREAM        Tin       Tout       FCP        CFJ
+                           (K)       (K)       (kW/K)  (kW/m2 K)
+             _____________________________________________________
+                     1    410.00    650.00     15.00      1.00
+                     2    350.00    500.00     13.00      1.00
+
+
+     *UTILITIES :
+
+             UTILITY       Tin       Tout       CFU
+                           (K)       (K)    (kW/m2 K)
+             __________________________________________
+              HOT         680.00    680.00      1.00
+              COLD        300.00    320.00      1.00
+
+
+     *COSTS :
+
+      COST OF HEATING UTILITY           ($/kW-yr) =        80.00
+      COST OF COOLING UTILITY           ($/kW-yr) =        15.00
+      FIXED CHARGE FOR EXCHANGER           ($/yr) =      5000.00
+      AREA COST COEFFICIENT FOR EXCHANGERS ($/m2) =       150.00
+      AREA COST COEFFICIENT FOR HEATERS    ($/m2) =       150.00
+      AREA COST COEFFICIENT FOR COOLERS    ($/m2) =       150.00
+      AREA COST EXPONENT FOR EXCHANGERS           =         1.00
+
+
+     *STAGES =   2
+
+     *MINIMUM APPROACH OF TEMPERATURE (EMAT) (K) =   1.00
+
+
+     *FORBIDDEN MATCHES :    NONE
+
+     *REQUIRED MATCHES  :    NONE
+
+
+     *SPLIT CONSTRAINTS :    NONE
+
+
+
+
+
+   RESULTS.
+   ______________
+
+
+     *MATCHES.
+
+
+      STAGE :   1         HEAT EXCHANGER   1
+
+             STREAM        Tin       Tout       FCP
+                           (K)       (K)       (kW/K)
+             ________________________________________
+              HOT    1    650.00    581.01     10.00
+              COLD   1    572.11    618.11     15.00
+
+          HEAT LOAD (kW)                   =     689.92
+          AREA BY CHEN APPROXIMATION (m2)  =      76.85
+          AREA BY LOG MEAN (m2)            =      76.60
+
+
+
+      STAGE :   2         HEAT EXCHANGER   2
+
+             STREAM        Tin       Tout       FCP
+                           (K)       (K)       (kW/K)
+             ________________________________________
+              HOT    1    581.01    386.01     10.00
+              COLD   2    350.00    500.00     13.00
+
+          HEAT LOAD (kW)                   =    1950.00
+          AREA BY CHEN APPROXIMATION (m2)  =      70.31
+          AREA BY LOG MEAN (m2)            =      70.27
+
+
+
+      STAGE :   2         HEAT EXCHANGER   3
+
+             STREAM        Tin       Tout       FCP
+                           (K)       (K)       (kW/K)
+             ________________________________________
+              HOT    2    590.00    468.42     20.00
+              COLD   1    410.00    572.11     15.00
+
+          HEAT LOAD (kW)                   =    2431.66
+          AREA BY CHEN APPROXIMATION (m2)  =     142.36
+          AREA BY LOG MEAN (m2)            =     142.01
+
+
+
+
+     *AREA AND HEAT LOAD OF HEATERS :
+
+          HEAT       COLD       AREA       HEAT LOAD
+        EXCHANGER   STREAM      (m2)         (kW)
+        ____________________________________________
+            4         1        21.74         478.42
+         TOTAL                 21.74         478.42
+
+
+
+     *AREA AND HEAT LOAD OF COOLERS :
+
+          HEAT       HOT        AREA       HEAT LOAD
+        EXCHANGER   STREAM      (m2)         (kW)
+        ____________________________________________
+            5         1         4.71         160.08
+            6         2        37.75        1968.34
+         TOTAL                 42.46        2128.42
+
+
+     *TOTAL HEAT LOAD OF UTILITIES (kW) =    2606.85
+
+
+
+     *TOTAL NUMBER OF HEAT EXCHANGERS    =   6
+
+     *TOTAL AREA OF HEAT EXCHANGERS (m2) =     353.07
+       HOT AND COLD STREAMS:
+            BY CHEN APPROXIMATION        =     289.53
+            BY LOG MEAN                  =     288.88
+       UTILITIES                         =      64.19
+
+
+     *TOTAL UTILITY COSTS ($/yr)   =     70200.36
+            HEATING                =     38273.99
+            COOLING                =     31926.37
+
+
+     *INVESTMENT COST ($/yr)       =     83057.56
+
+
+     *TOTAL NETWORK COST ($/yr)    =    153257.92

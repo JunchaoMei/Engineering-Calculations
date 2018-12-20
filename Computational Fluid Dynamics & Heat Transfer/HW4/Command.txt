@@ -1,0 +1,39 @@
+clear;
+[T1,x1,t1]=DuFort_Frankel(0.05,0.01);
+mesh(x1,t1,T1);
+title('Dufort Frankel (¦¤x=0.05,¦¤t=0.01)');
+xlabel('x'); ylabel('t');zlabel('T');
+axis([0 0.5 0 0.5 100 300]);
+set(gca,'ytick',[0:0.1:0.5]);
+
+clear;
+[T1,x1,t1]=DuFort_Frankel(0.05,0.05);
+mesh(x1,t1,T1);
+title('Dufort Frankel (¦¤x=0.05,¦¤t=0.05)');
+xlabel('x'); ylabel('t');zlabel('T');
+axis([0 0.5 0 0.5 100 300]);
+set(gca,'ytick',[0:0.1:0.5]);
+
+clear;
+[T1,x1,t1]=Crank_Nicolson(0.05,0.01);
+mesh(x1,t1,T1);
+title('Crank Nicolson (¦¤x=0.05,¦¤t=0.01)');
+xlabel('x'); ylabel('t');zlabel('T');
+axis([0 0.5 0 0.5 100 300]);
+set(gca,'ytick',[0:0.1:0.5]);
+
+clear;
+[T1,x1,t1]=Crank_Nicolson(0.05,0.05);
+mesh(x1,t1,T1);
+title('Crank Nicolson (¦¤x=0.05,¦¤t=0.05)');
+xlabel('x'); ylabel('t');zlabel('T');
+axis([0 0.5 0 0.5 100 300]);
+set(gca,'ytick',[0:0.1:0.5]);
+
+clear;
+[T1,x1,t1]=Exact(0.05,0.05);
+mesh(x1,t1,T1);
+title('Exact (¦¤x=0.05,¦¤t=0.05)');
+xlabel('x'); ylabel('t');zlabel('T');
+axis([0 0.5 0 0.5 100 300]);
+set(gca,'ytick',[0:0.1:0.5]);
